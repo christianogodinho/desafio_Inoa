@@ -12,3 +12,6 @@ class Price (models.Model):
     tipo = models.CharField(("Tipo"), max_length=150)
     qtd_Teorica = models.CharField(("Qtde. Teorica"), max_length=255)
     part = models.CharField(("Part.(%)"), max_length=150)
+
+    def __str__(self):
+        return self.codigo

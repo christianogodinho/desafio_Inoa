@@ -1,6 +1,12 @@
+from django.shortcuts import render
+from .models import Price
 from django.http import HttpResponse
+from datetime import datetime
 
 
 def home(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-# Create your views here.
+
+    price_list = Price.objects.all()
+
+    return render(request, 'prices/home.html',
+                  {'price_list': price_list})
